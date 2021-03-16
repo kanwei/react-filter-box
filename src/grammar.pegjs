@@ -22,12 +22,18 @@ Expression
       return result;
     }
 
+/*
 Condition
   = "(" _ expr:Expression _ ")" 
-  		{   
-        	return {expressions:expr}; 
+      {   
+          return {expressions:expr}; 
         }
   / ThreeFactorCondition 
+
+  */
+
+Condition
+  = ThreeFactorCondition 
   
 ThreeFactorCondition
   = category:ValidName ws operator:Operator ws value:ValidValue 
